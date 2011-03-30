@@ -11,8 +11,6 @@ namespace arduino {
   namespace sensors {
     const float SUPPLY_VOLTAGE = 4.7;
     const float VOLTS_PER_CM   = 27.0;
-    const float MIN_DISTANCE   = 8.0;
-    const float MAX_DISTANCE   = 80.0;
 
     class InfraredSensor {
       public:

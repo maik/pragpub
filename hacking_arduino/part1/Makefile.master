@@ -257,8 +257,8 @@ upload : all
 	- pkill -f '$(MON_CMD).*$(PORT)'
 	- sleep 1
 	- stty -f $(PORT) hupcl
-	- $(AVRDUDE) -V -C$(AVRDUDE_CONF) -p$(MCU) -c$(PROGRAMMER) -P$(PORT) \
-	    -b$(UPLOAD_SPEED) -D -Uflash:w:$(IMAGE).hex:i
+	- $(AVRDUDE) -V -C$(AVRDUDE_CONF) -p$(MCU) -c$(PROGRAMMER) \
+	  -P$(PORT) -b$(UPLOAD_SPEED) -D -Uflash:w:$(IMAGE).hex:i
 
 monitor :
 	$(MON_CMD) $(PORT) $(MON_SPEED)

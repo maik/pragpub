@@ -4,12 +4,12 @@
 
 const uint16_t BAUD_RATE     = 57600;
 const uint16_t IR_SENSOR_PIN = A0;
-const float    MOUNTING_GAP  = 3.0;
 const uint16_t SPEAKER_PIN   = 13;
+const float    MOUNTING_GAP  = 3.0;
 
 arduino::ParkDistanceControl pdc(
   InfraredSensor(IR_SENSOR_PIN),
-  SPEAKER_PIN,
+  Speaker(SPEAKER_PIN),
   MOUNTING_GAP
 );
 

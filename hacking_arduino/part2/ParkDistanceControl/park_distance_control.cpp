@@ -5,10 +5,10 @@
 namespace arduino {
   ParkDistanceControl::ParkDistanceControl(
     const InfraredSensor& ir_sensor,
-    const uint16_t        speaker_pin,
+    const Speaker&        speaker,
     const float           mounting_gap) :
       _ir_sensor(ir_sensor),
-      _speaker_pin(speaker_pin),
+      _speaker(speaker),
       _mounting_gap(mounting_gap)
   {
   }
@@ -16,10 +16,10 @@ namespace arduino {
   void ParkDistanceControl::check(void) {
     _ir_sensor.update();
     const float distance =
-			_ir_sensor.getDistance() - _mounting_gap;
+      _ir_sensor.getDistance() - _mounting_gap;
     if (distance <= MIN_DISTANCE) {
-  		Serial.println("Too close!");
-      tone(_speaker_pin, TONE_FREQUENCY, TONE_DURATION);
+      Serial.println("Too close!");
+      _speaker.beep();
     } else if (distance >= MAX_DISTANCE) {
       Serial.println("OK.");
     } else {
