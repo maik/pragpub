@@ -3,8 +3,8 @@
 #include "inc/park_distance_control.h"
 
 const uint16_t BAUD_RATE     = 57600;
-const uint16_t IR_SENSOR_PIN = A0;
-const uint16_t SPEAKER_PIN   = 13;
+const uint8_t  IR_SENSOR_PIN = A0;
+const uint8_t  SPEAKER_PIN   = 13;
 const float    MOUNTING_GAP  = 3.0;
 
 arduino::ParkDistanceControl pdc(

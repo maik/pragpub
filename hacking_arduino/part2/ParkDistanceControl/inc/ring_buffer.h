@@ -7,15 +7,22 @@
 
 namespace arduino {
   namespace util {
-    const uint16_t DEF_SIZE = 16;
-
-    template<typename T>
+    template<typename T> // <label id="code.rbuffer.template"/>
     class RingBuffer {
+      private:
+        T*       _samples;
+        uint16_t _sample_pos;
+        uint16_t _buffer_size;
+
       public:
+        static const uint16_t DEF_SIZE = 16;
+
         RingBuffer(const uint16_t buffer_size = DEF_SIZE) {
           _sample_pos = 0;
           _buffer_size = buffer_size != 0 ? buffer_size : DEF_SIZE;
-          _samples = static_cast<T*>(malloc(sizeof(T) * _buffer_size));
+          _samples = static_cast<T*>(
+            malloc(sizeof(T) * _buffer_size)
+          );
         }
 
         RingBuffer(const RingBuffer& rhs) {
@@ -26,7 +33,9 @@ namespace arduino {
           if (this != &rhs) {
             _sample_pos = rhs._sample_pos;
             _buffer_size = rhs._buffer_size;
-            _samples = static_cast<T*>(malloc(sizeof(T) * _buffer_size));
+            _samples = static_cast<T*>(
+              malloc(sizeof(T) * _buffer_size)
+            );
             for (uint16_t i = 0; i < _buffer_size; i++)
               _samples[i] = rhs._samples[i];
           }
@@ -52,11 +61,6 @@ namespace arduino {
         uint16_t getBufferSize() const {
           return _buffer_size;
         }
-
-      private:
-        T*       _samples;
-        uint16_t _sample_pos;
-        uint16_t _buffer_size;
     };
   }
 }

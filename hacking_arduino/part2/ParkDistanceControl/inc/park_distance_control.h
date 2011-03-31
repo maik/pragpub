@@ -2,18 +2,18 @@
 #define PARK_DISTANCE_CONTROL
 
 // START:main
-#include <stdint.h>
 #include "infrared_sensor.h"
 #include "speaker.h"
 
 using namespace arduino::sensors;
+using namespace arduino::actuators;
 
 namespace arduino {
-  const float MIN_DISTANCE = 8.0;
-  const float MAX_DISTANCE = 80.0;
-
   class ParkDistanceControl {
     public:
+      static const float MIN_DISTANCE = 8.0;
+      static const float MAX_DISTANCE = 80.0;
+
       ParkDistanceControl(
         const InfraredSensor& ir_sensor,
         const Speaker&        speaker,

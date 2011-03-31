@@ -9,19 +9,19 @@ using namespace arduino::util;
 
 namespace arduino {
   namespace sensors {
-    const float SUPPLY_VOLTAGE = 4.7;
-    const float VOLTS_PER_CM   = 27.0;
-
     class InfraredSensor {
       public:
-        InfraredSensor(const uint16_t pin);
+       static const float SUPPLY_VOLTAGE = 4.7;
+       static const float VOLTS_PER_CM   = 27.0;
+
+        InfraredSensor(const uint8_t pin);
 
         float getDistance(void) const;
         void update(void);
 
       private:
         RingBuffer<uint16_t> _buffer;
-        uint16_t             _pin;
+        uint8_t              _pin;
     };
   }
 }
