@@ -10,6 +10,10 @@ using namespace arduino::actuators;
 
 namespace arduino {
   class ParkDistanceControl {
+    private:
+      InfraredSensor _ir_sensor;
+      Speaker        _speaker;
+      float          _mounting_gap;
     public:
       static const float MIN_DISTANCE = 8.0;
       static const float MAX_DISTANCE = 80.0;
@@ -20,11 +24,6 @@ namespace arduino {
         const float           mounting_gap = 0.0);
 
       void check(void);
-
-    private:
-      InfraredSensor _ir_sensor;
-      Speaker        _speaker;
-      float          _mounting_gap;
   };
 }
 // END:main

@@ -12,14 +12,14 @@ namespace arduino {
         update();
     }
 
+    void InfraredSensor::update(void) {
+      _buffer.addValue(analogRead(_pin));
+    }
+
     float InfraredSensor::getDistance(void) const {
       const float voltage = 
         _buffer.getAverageValue() * SUPPLY_VOLTAGE / 1024.0;
       return VOLTS_PER_CM / voltage;
-    }
-
-    void InfraredSensor::update(void) {
-      _buffer.addValue(analogRead(_pin));
     }
   }
 }

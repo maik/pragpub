@@ -21,7 +21,6 @@ namespace arduino {
         {
           tone(_speaker_pin, frequency, duration);
         }
-
       private:
         uint8_t _speaker_pin;
     };
