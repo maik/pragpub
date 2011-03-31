@@ -5,9 +5,7 @@
 
 namespace arduino {
   namespace sensors {
-    InfraredSensor::InfraredSensor(const uint8_t pin) 
-      : _pin(pin) 
-    {
+    InfraredSensor::InfraredSensor(const uint8_t pin) : _pin(pin) {
       for (uint16_t i = 0; i < _buffer.getBufferSize(); i++)
         update();
     }
