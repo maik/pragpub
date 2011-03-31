@@ -1,6 +1,6 @@
 // START:main
 #include <stdint.h>
-#include "park_distance_control.h"
+#include "pdc.h"
 
 const uint16_t BAUD_RATE     = 57600;
 const uint8_t  IR_SENSOR_PIN = A0;

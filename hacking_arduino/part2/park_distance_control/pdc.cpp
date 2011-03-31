@@ -1,6 +1,6 @@
 // START:main
 #include <WProgram.h>
-#include "park_distance_control.h"
+#include "pdc.h"
 
 namespace arduino {
   void ParkDistanceControl::check(void) {
