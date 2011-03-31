@@ -9,7 +9,6 @@ MON_CMD = screen
 MON_SPEED = 57600
 PORT = /dev/tty.usbmodemfa141
 BOARD = uno
-INC_DIRS = ./inc
 LIB_DIRS = $(addprefix $(ARD_HOME)/libraries/, $(LIBS))
 include ../Makefile.master
 

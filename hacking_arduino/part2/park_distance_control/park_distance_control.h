@@ -21,7 +21,10 @@ namespace arduino {
       ParkDistanceControl(
         const InfraredSensor& ir_sensor,
         const Speaker&        speaker,
-        const float           mounting_gap = 0.0);
+        const float           mounting_gap = 0.0) :
+        _ir_sensor(ir_sensor),
+        _speaker(speaker),
+        _mounting_gap(mounting_gap) {}
 
       void check(void);
   };

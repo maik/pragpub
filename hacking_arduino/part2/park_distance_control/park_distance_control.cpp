@@ -3,16 +3,6 @@
 #include "park_distance_control.h"
 
 namespace arduino {
-  ParkDistanceControl::ParkDistanceControl(
-    const InfraredSensor& ir_sensor,
-    const Speaker&        speaker,
-    const float           mounting_gap) :
-      _ir_sensor(ir_sensor),
-      _speaker(speaker),
-      _mounting_gap(mounting_gap)
-  {
-  }
-
   void ParkDistanceControl::check(void) {
     _ir_sensor.update();
     const float distance =
