@@ -160,7 +160,7 @@ ifneq "$(strip $(LIB_C_SRC) $(LIB_CXX_SRC))" ""
 	LIB_CXX_OBJ = $(patsubst %.cpp,%.o,$(notdir $(LIB_CXX_SRC)))
 	LIB_LIB = library
 	LIB_AR = $(BUILD_DIR)/lib$(LIB_LIB).a
-	LIB_AR_OBJ = $(LIB_AR)($(LIB_C_OBJ) $(LIB_CXX_OBJ))
+	LIB_AR_OBJ = $(LIB_AR)($(LIB_C_OBJ)$(LIB_CXX_OBJ))
 	LIB_LD_FLAG = -l$(LIB_LIB)
 endif
 
