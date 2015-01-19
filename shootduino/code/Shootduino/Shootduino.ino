@@ -13,7 +13,7 @@ const uint8_t MAX_ASTEROIDS = 8;
 const uint8_t MAX_BULLETS = 3;
 const uint8_t MAX_STARS = 10;
 const uint8_t MAX_MISSES = 5;
-const uint16_t ASTEROID_DELAY = 200;
+const uint16_t ASTEROID_DELAY = 800;
 const uint16_t BULLET_DELAY = 600;
 const uint16_t MIN_DELAY = 300;
 
@@ -425,7 +425,7 @@ void update_game() {
   if (right_button) {
     fire_bullet();
   }
-  if (millis() - asteroid_started > 1000) {
+  if (millis() - asteroid_started > ASTEROID_DELAY) {
     start_asteroid();
   }
   check_collisions();
