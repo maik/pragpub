@@ -178,7 +178,7 @@ ifneq "$(strip $(SKT_C_SRC) $(SKT_CXX_SRC))" ""
 	SKT_CXX_OBJ = $(patsubst %.cpp,%.o,$(SKT_CXX_SRC))
 	SKT_LIB = sketch
 	SKT_AR = $(BUILD_DIR)/lib$(SKT_LIB).a
-	SKT_AR_OBJ = $(SKT_AR)/($(SKT_C_OBJ) $(SKT_CXX_OBJ))
+	SKT_AR_OBJ = $(SKT_AR)($(SKT_C_OBJ) $(SKT_CXX_OBJ))
 	SKT_LD_FLAG = -l$(SKT_LIB)
 endif
 
